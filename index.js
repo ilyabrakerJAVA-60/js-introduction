@@ -1,23 +1,25 @@
 //#1
 function sumDigits(num)
 {
-    res=0;
+    let res=0;
+    if(num<0){
+        num=-num
+    }
     if (isNaN(num)) {
         return NaN;
     }
-    for(digit = 0;num != 0;num = num / 10){
-        digit=num%10;
-        res+=digit;
-        res=Math.floor(res) 
+    while(num!=0){
+        res+=num%10;
+        res=Math.floor(res); 
+        num=num/10;
      
     }
- 
-    return(res)
+ return(res)
 }
-console.log((sumDigits("123")))
+console.log((sumDigits("-123")))
 
 //#2
 function ananas(){
-    return("a"+"a"*"25a"+"as")
+    return("a" + +"a" + "as")
 }
 console.log(ananas().toLowerCase())
