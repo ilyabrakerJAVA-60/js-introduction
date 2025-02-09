@@ -1,12 +1,23 @@
-function sum(num1,num2) {
-    return num1 +num2
+//#1
+function sumDigits(num)
+{
+    res=0;
+    if (isNaN(num)) {
+        return NaN;
+    }
+    for(digit = 0;num != 0;num = num / 10){
+        digit=num%10;
+        res+=digit;
+        res=Math.floor(res) 
+     
+    }
+ 
+    return(res)
 }
-// console.log(sum(10,20))
+console.log((sumDigits("123")))
 
-// function sum(num1,num2=num1) {
-//     return num1 +num2
-// }
-// console.log(sum(10))
-
-
-console.log(`sum(10,20)=${(sum(10,20))}`)
+//#2
+function ananas(){
+    return("a"+"a"*"25a"+"as")
+}
+console.log(ananas().toLowerCase())
