@@ -1,27 +1,45 @@
-// let i=2;
-// a="abc";
-// console.log(a)
-// const b=3;
-// b="lmn"; -- const cannot be update
-/* PRIMITIVES TYPES
-1.number 
-2.string
-3.boolean(true and fales)
-4.underfined(underfined)
-5.null(null)
-*/
-//1.number
-let a=100;
-a /=3;
-console.log('none-normalized result of division 100 on 3',a)
-// отбрасывает дробную часть
-a=Math.trunc(a)
-console.log('normalized result of division 100 on 3',a) 
-// округляет 
-a=Math.round(a)
-console.log('normalized result of division 100 on 3',a)
-// нижняя граница числа 
-console.log("30.1 after method floor - ", Math.floor(30.1));
-// верхняя граница числа 
-console.log("30.1 after method ceil - ", Math.ceil(30.1));
+// // strings
+// let str="kukhhhhh"
+// // уменьшает заглавные буквы
+// str=str.toLowerCase();
+// console.log(str);
+// let b = str < "kuku";
+// console.log(b);
 
+
+
+// let str1 = "9.5";
+// let str2 = 9;
+// let b = str1 > str2;
+// console.log(b)
+
+
+// let str1=2;
+// let str2="5";
+// console.log( str1 * str2);
+// let str3="2a";
+// let str4="5";
+// console.log("a" + (str3 - str4)+"a"+"s");
+// console.log(3 + 4 + "5");
+
+
+// let str = 0;
+// if(str) {
+//     console.log(""+ 5 + 2);
+// }
+
+
+
+//console.log(null - "1")
+
+// console.log("true" * false)
+
+// if(true + true){
+//     console.log(true)
+// }
+
+
+
+// console.log(123 + + "5")
+
+//console.log("123" + + "true")
