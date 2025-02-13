@@ -1,25 +1,21 @@
-//#1
-function sumDigits(num)
-{
-    let res=0;
-    if(num<0){
-        num=-num
-    }
-    if (isNaN(num)) {
-        return NaN;
-    }
-    while(num!=0){
-        res+=num%10;
-        res=Math.floor(res); 
-        num=num/10;
-     
-    }
- return(res)
-}
-console.log((sumDigits("-123")))
+// const str = "a123";
+// console.log("98".charCodeAt(1) - "0".charCodeAt(0))
+// console.log("z".charCodeAt(0)-"a".charCodeAt(0) + 10)
+// let str= "123.989";
+// str = str.replace("9","") заменяет метода ;
+// str=str.replaceAll("9","")
 
-//#2
-function ananas(){
-    return("a" + +"a" + "as")
-}
-console.log(ananas().toLowerCase())
+// console.log(str.slice(undefined,4))
+// console.log(str.trim() == '123.989')
+// console.log("hello world" [1])
+
+console.log(parseInt("1a",16))
+
+let str= "123.989";
+
+console.log(str.trim()=="123.989")
+
+
+
+
+// console(`conversions string to number in decimal number system`)
