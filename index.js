@@ -28,16 +28,7 @@ function parsedigit(num,radix){
     let i=0;
     let charCode;
     let flag = false;
-    while(i<num.length){
-    charCode=num.charCodeAt(i);
-    if(charCode>=48 && charCode<=57){
-         charCode=charCode-48; 
-    }
-    else if (charCode >=97 && charCode<=122){
-        charCode=charCode-87;
-    }
-    else break;
-    if (charCode >= radix) break;
+    while(i<num.length && (charCode=findDigit(num[i],radix))>-1){
     res =res * radix + charCode;
     i++;
     flag=true;
@@ -45,7 +36,27 @@ function parsedigit(num,radix){
     if (!flag) res=NaN;
     return res;
 }
+function findDigit(char,radix){
+  let res=-1  
+  let charCode=(char.charCodeAt(0));
+    if((charCode>=48 && charCode<=57)){
+        charCode=charCode-48
+        if( (charCode >=0 && charCode < radix)){
+            res=charCode
+        }  
+    }
+   else if ((charCode >=97 && charCode<=122)){
+    charCode=charCode-87;
+    if((charCode >=0 && charCode < radix)){
+            res=charCode
+    }
+    }
+return res
+}
 
+console.log(myParseInt(123,16))
+console.log("1".charCodeAt())
+console.log(parseInt(123,16))
 console.log(`conversion string to number in decimal number system myParseInt("123")=123 ${myParseInt(123) == 123}`)
 console.log(`conversion string to number in binary number system myParseInt("123",2)=123 ${myParseInt(123, 2) == 1}`)
 console.log(`conversion string to number in 36-th number system myParseInt("z.", 36) = 35 ${myParseInt("z.", 36) == 35}`)
