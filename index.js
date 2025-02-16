@@ -1,9 +1,9 @@
-let array = [2,3,4];
+let array = [50,50];
 
 function some(array, fun) {
 let i=0;
 let res=false;
-while(i < array.length || res!=true) {
+while(i < array.length && res!=true) {
     if (fun(array[i],i)){
         res=true;  
     }
@@ -13,11 +13,15 @@ return res
 }
 
 function evenNumber(num) {
-if(typeof(num)=="number")
-    return num % 2==0;
-else
-    return NaN
-
+let res; 
+    if(typeof(num)=="number"){
+        num % 2;
+        if(num%2==0)
+            res=num
+    }
+    else
+        res=NaN
+return res
 
 }
 
@@ -25,7 +29,7 @@ function every(array, fun) {
 let res=true;
 let flag=0;
 let i = 0;
-while(i < array.length || flag<0) {
+while(i < array.length && flag==0) {
     if (!fun(array[i],i)){
         flag++;
         }
@@ -38,10 +42,15 @@ return res;
 }
 
 function elmGreaterIndex(elem, index) {
-if(typeof(elem)=="number")
-    return elem > index
-else 
-    return NaN
+let res =false;
+let flag=0;
+    if(typeof(elem)=="number"){
+        flag=elem-index
+        if(flag>0){
+            res=true
+    }
+}
+return res
 }
 
 console.log(`using "every" function for even numbers array: ${array}, function ${evenNumber}, result: ${every(array, evenNumber)} - false`)
