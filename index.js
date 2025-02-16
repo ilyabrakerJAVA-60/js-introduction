@@ -1,18 +1,22 @@
-let array = [3,4];
+let array = [2,3,4];
 
 function some(array, fun) {
 let res=false;
 for(let i = 0; i < array.length || res==false; i++) {
     if (fun(array[i],i)){
         res =true
-      }
-      }
+    }
+}
 return res
 }
 
 function evenNumber(num) {
 if(typeof(num)=="number")
     return num % 2==0;
+else
+    return NaN
+
+
 }
 
 function every(array, fun) {
@@ -21,7 +25,7 @@ let flag =0;
 for(let i = 0; i < array.length || flag<0; i++) {
     if (!fun(array[i],i)){
         flag++;
-   }
+        }
    }
 if(flag>0){
     res=false;
@@ -32,6 +36,8 @@ return res;
 function elmGreaterIndex(elem, index) {
 if(typeof(elem)=="number")
     return elem > index
+else 
+    return NaN
 }
 
 console.log(`using "every" function for even numbers array: ${array}, function ${evenNumber}, result: ${every(array, evenNumber)} - false`)
