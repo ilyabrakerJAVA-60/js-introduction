@@ -1,11 +1,13 @@
 let array = [2,3,4];
 
 function some(array, fun) {
+let i=0;
 let res=false;
-for(let i = 0; i < array.length || res==false; i++) {
+while(i <= array.length || res!=false) {
     if (fun(array[i],i)){
-        res =true
+        res==true;  
     }
+i++;
 }
 return res
 }
@@ -22,10 +24,12 @@ else
 function every(array, fun) {
 let res=true;
 let flag =0;
-for(let i = 0; i < array.length || flag<0; i++) {
+let i = 0;
+while(i < array.length || flag==0) {
     if (!fun(array[i],i)){
         flag++;
         }
+i++;
    }
 if(flag>0){
     res=false;
