@@ -3,9 +3,9 @@ let array = [2,3,4];
 function some(array, fun) {
 let i=0;
 let res=false;
-while(i <= array.length || res!=false) {
+while(i < array.length || res!=true) {
     if (fun(array[i],i)){
-        res==true;  
+        res=true;  
     }
 i++;
 }
@@ -23,9 +23,9 @@ else
 
 function every(array, fun) {
 let res=true;
-let flag =0;
+let flag=0;
 let i = 0;
-while(i < array.length || flag==0) {
+while(i < array.length || flag<0) {
     if (!fun(array[i],i)){
         flag++;
         }
