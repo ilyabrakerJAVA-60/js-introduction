@@ -1,39 +1,41 @@
 function minMax(...operands){
-    let array_new=[];
-    let index=0;
     let result=[Infinity,-Infinity]
     for (let i=0;i<operands.length;i++){
         if (Array.isArray(operands[i])){
-            ifHaveisArray(operands[i],array_new,index)   
+            let ArrayMinMax=findMinMaxinArray(operands[i])
+            result=getMinMax(result,ArrayMinMax[0],ArrayMinMax[1])
         }
-        else{
-            array_new[index]=operands[i]
-            index++;
-        }
+        else
+            result=getMinMax(result,operands[i])
+    
     }
-    result=find_minMax(array_new,result)
+    
     return result
 }
-function find_minMax(array_new,result){
+function findMinMaxinArray(array_in_array){
+    let result=[Infinity,-Infinity]
     let newmin=result[0];
     let newmax=result[1];
-    for(let i=0; i<array_new.length;i++){
-        if(newmin>array_new[i])
-            newmin=array_new[i]
-        if (newmax<array_new[i])
-            newmax=array_new[i]
+    for(let i=0; i<array_in_array.length;i++){
+        if(newmin>array_in_array[i])
+            newmin=array_in_array[i]
+        if (newmax<array_in_array[i])
+            newmax=array_in_array[i]
     }
     return [newmin,newmax]
-
 }
-
-function ifHaveisArray(operands,new_Array,index){
-    for(let j=0; j<operands.length;j++){
-        new_Array[index]=operands[j];
-        index++;
-    }   
+function getMinMax(result,min,max=min){
+    if(result[0]>min){
+        result[0]=min
     }
-console.log(minMax(1,2,[3,4,6],5,7,9,[1,2,12],-1))
-
-
+    if(result[1]<max){
+        result[1]=max
+    }
+ return result
+}
+array1=[4,1,2,7,8]
+console.log(minMax(array1))
+console.log(minMax(1,2,3))
+console.log(minMax(1,2,3,[100, 50]))
+console.log(minMax(1,2,3,[100,50],[-2,40,200]))
 
