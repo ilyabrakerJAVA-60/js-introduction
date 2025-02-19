@@ -1,71 +1,20 @@
-let array = [50,50];
-
-function some(array, fun) {
-let i=0;
-let res=false;
-while(i < array.length && res!=true) {
-    if (fun(array[i],i)){
-        res=true;  
-    }
-i++;
-}
-return res
-}
-
-function evenNumber(num) {
-let res; 
-    if(typeof(num)=="number"){
-        num % 2;
-        if(num%2==0)
-            res=num
-    }
-    else
-        res=NaN
-return res
-
-}
-
-function every(array, fun) {
-let res=true;
-let flag=0;
-let i = 0;
-while(i < array.length && flag==0) {
-    if (!fun(array[i],i)){
-        flag++;
-        }
-i++;
-   }
-if(flag>0){
-    res=false;
-   }
-return res;
-}
-
-function elmGreaterIndex(elem, index) {
-let res =false;
-let flag=0;
-    if(typeof(elem)=="number"){
-        flag=elem-index
-        if(flag>0){
-            res=true
-    }
-}
-return res
-}
-
-console.log(`using "every" function for even numbers array: ${array}, function ${evenNumber}, result: ${every(array, evenNumber)} - false`)
-console.log(`using "some" function for even numbers array: ${array}, function ${evenNumber}, result: ${some(array, evenNumber)} - true`)
-console.log(`using "every" function for elements greater than the index values, array: ${array}, function ${elmGreaterIndex}, result: ${every(array, elmGreaterIndex)} - true`)
-// debugger;
-// console.log(evenNumber(0))
-// let array = ["abc", 23];
-
-// function forEach (array, fun) {
-//      for(let i = 0; i < array.length; i++) {
-//         fun(array[i], i);
-//      }
-// }
-// function print(elem, index){
-//     console.log(`index: ${index}, element: ${elem}`)
-// };
-// forEach(array, print);
+const array=['HELLO',122,-10,'Java','JavaScript',500,'Nodejs']
+//добавить в массив
+// array.push(...[1,2,3])//добавляет аргументы в массив
+// console.log(array)
+// console.log([1,2,3].push(4,5,6))// возвращает кол-во элементов, после добавления,добавляет в конец 
+// // console.log([1,2,3].concat([4,5,6]))
+// const array1=[1,2,3].concat([3,4,5])
+// console.log(array1[4])
+// const ar1=[3,4,5].concat(array)
+// console.log(ar1)
+// console.log(array.unshift(3,4,5)) // возвращает кол-во элементов, добавляет в начало
+// console.log(array)
+// console.log(array.splice(3,0,"kuku"))// добавляет удаляет где угодно
+// console.log(array)
+// console.log(array.pop())// удаляет массив последний и возвращает его
+// console.log(array)
+// console.log(array.shift())// удаляет массив первый и возвращает его
+// console.log(array)
+console.log(array.splice(3,1,"python"))
+console.log(array)
