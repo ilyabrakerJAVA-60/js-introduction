@@ -1,42 +1,27 @@
- array=['HELLO',122,-10,'Java','JavaScript',500,'Nodejs']
-// // найти индекс 
-// let index=array.lastIndexOf("Java");
-// console.log(index);
-const array1=array.filter(function(e,index){
-    let res=false;
-    if(typeof e=="string"){
-        res=e.includes("Java")
-        
-    }
-    return (res)
-})
-console.log(array1)
-// array.forEach(function(e,i){
-//     console.log(i+1,e)
-// })
+ array=['JavaScript',122,-10,'Java','HELLO',500,'Nodejs']
+ function compNumStr(e1, e2){
+    let res=-1;
+    if(typeof(e1)=="number"&&typeof(e2)=="number")
+        res=e2-e1
+    else if(typeof(e1)!="number"&&typeof(e2)!="number")
+        res = e1 > e2 ? 1 : (e1 < e2 ? -1 : 0);
+    else if(typeof(e1)!="number")
+        res=1
+    return res
+ }
+ console.log(array.sort(compNumStr))
+ 
+ function orderedList(array) {
+ const items=array.map(getItem).join("")
+ return `<ol>${items}<ol>`
+  
+  }
+function getItem(item){
+    const res= `<li class="item ${typeof(item)=="number" ? "item_number" : ""}"
+    >${item}</li>`
+    return res
 
-// array.map("Java")
+}
+  const bodyElement = document.querySelector("body");
+  bodyElement.innerHTML = orderedList(["Hello", 300, "Java", "Nodejs", 100]);
 
-
-let numbers = [1, 2, 3, 4, 5, 6];
-
-// Фильтруем четные числа
-let evenNumbers = numbers.map(function(num) {
-  if(num % 2 === 0)
-    return(`item :${num}`)
- return null
-}).join("  ");
-
-console.log(evenNumbers); // [2, 4, 6]
-
-const array2 = [122, 10000, 2, 9, 100000000];
-console.log(array2.toSorted());
-console.log(array2)
-const array3 = [122, 10000, 2, 9, 100000000];
-// console.log(array1.sort());
-// console.log(array1)
-// console.log(array1.toSorted());
-// console.log(array1);
-console.log(array3.toSorted(function(a, b){
-    return a - b;
-}))
