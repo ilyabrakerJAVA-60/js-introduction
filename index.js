@@ -11,7 +11,7 @@ function MyminMax(array) {
     return myReduce(array, (accumulator, currentValue) => {
       const min = currentValue < accumulator[0] ? currentValue : accumulator[0]; // минимальное значение
       const max = currentValue > accumulator[1] ? currentValue : accumulator[1]; // максимальное значение
-      return [min,max];
+      return [min,max];1
     },);
   }
 const array = [3, 1, 4, 1, 5, 9, 2];
