@@ -1,18 +1,18 @@
 function myReduce(array, callback, initialValue) {
-    let accumulator = initialValue !== undefined ? initialValue : array[0];
+    let accumulator = initialValue !== undefined ? initialValue :[array[0], array[0]];
     let startIndex = initialValue !== undefined ? 0 : 1;
     for (let i = startIndex; i < array.length; i++) {
-     res = callback(accumulator, array[i], i, array);
+     accumulator = callback(accumulator, array[i], i, array);
     }
   
-    return res;
+    return accumulator;
   }
 function MyminMax(array) {
     return myReduce(array, (accumulator, currentValue) => {
-      accumulator[0] = currentValue < accumulator[0] ? currentValue : accumulator[0]; // минимальное значение
-      accumulator[1] = currentValue > accumulator[1] ? currentValue : accumulator[1]; // максимальное значение
-      return accumulator;
-    }, [array[0], array[0]]);
+      const min = currentValue < accumulator[0] ? currentValue : accumulator[0]; // минимальное значение
+      const max = currentValue > accumulator[1] ? currentValue : accumulator[1]; // максимальное значение
+      return [min,max];
+    },);
   }
 const array = [3, 1, 4, 1, 5, 9, 2];
 let [min,max]=MyminMax(array)
